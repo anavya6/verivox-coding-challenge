@@ -1,0 +1,33 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 0.1fr 0.5fr 1fr 1fr;
+  gap: 1px;
+}
+
+.grid-container>div {
+  padding: 1rem 0.5rem;
+}
+
+.index-section {
+  text-align: center;
+  align-self: center;
+}
+
+.title-section {
+  text-align: center;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+}
+
+.tags-section {
+  border-right: 1px solid #eee;
+}
+
+.details-section {
+  grid-column: 1/-1;
+  border-top: 1px solid #eee;
+}
+
+.star {
+  color: var(--primary-color)
+}

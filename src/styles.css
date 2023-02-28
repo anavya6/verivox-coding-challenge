@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+:root {
+  --primary-color: #fd8a02;
+}
+
+app-root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
