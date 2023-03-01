@@ -11,6 +11,10 @@ import { SearchResultComponent } from './search-result/search-result.component';
 import { ResultComponent } from './result/result.component';
 import { NotFoundComponent } from './page/not-found/not-found.component';
 import { FormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { ItemEffects } from './store/effects';
+import { itemReducer } from './store/reducer';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,9 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot({ items: itemReducer }),
+    EffectsModule.forRoot([ItemEffects]),
   ],
   providers: [],
   bootstrap: [AppComponent]

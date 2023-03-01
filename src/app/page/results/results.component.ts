@@ -1,23 +1,15 @@
-import { ItemsServiceService } from './../../service/items-service.service';
 import { Component, OnInit } from '@angular/core';
-import { Item } from 'src/app/model/item';
+import { select, Store } from '@ngrx/store';
+import { ItemState } from 'src/app/store/reducer';
+import { itemSelector } from 'src/app/store/selector';
 
 @Component({
   selector: 'app-results',
   templateUrl: './results.component.html',
   styleUrls: ['./results.component.css']
 })
-export class ResultsComponent implements OnInit {
-  items: Array<Item> = [];
+export class ResultsComponent {
+  items$ = this.store.pipe(select(itemSelector));
 
-  constructor(private itemsService: ItemsServiceService) { }
-  ngOnInit(): void {
-    this.getItems();
-  }
-
-  getItems(): void {
-    this.itemsService.getItems().subscribe((resp) => {
-      this.items = resp;
-    });
-  }
+  constructor(private store: Store<ItemState>) { }
 }
