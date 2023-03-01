@@ -1,7 +1,7 @@
 .grid-container {
   display: grid;
-  grid-template-columns: 0.1fr 0.5fr 1fr 1fr;
-  gap: 1px;
+  grid-template-columns: 0.1fr 1fr 2fr 1fr;
+  grid-template-rows: repeat(2, 1fr);
 }
 
 .grid-container>div {
@@ -9,25 +9,131 @@
 }
 
 .index-section {
-  text-align: center;
+  grid-row: 1/ span 2;
   align-self: center;
 }
 
 .title-section {
+  grid-column: 2;
+  grid-row: 1/ span 2;
   text-align: center;
   border-left: 1px solid #eee;
-  border-right: 1px solid #eee;
 }
 
 .tags-section {
-  border-right: 1px solid #eee;
+  grid-column: 3;
+  grid-row: 1;
+  border-left: 1px solid #eee;
 }
 
-.details-section {
-  grid-column: 1/-1;
-  border-top: 1px solid #eee;
+.rating-section {
+  grid-column: 3;
+  grid-row: 2;
+  border-left: 1px solid #eee;
 }
 
 .star {
   color: var(--primary-color)
+}
+
+.price-section {
+  grid-column: 4;
+}
+
+.btn-section {
+  grid-column: 4;
+  text-align: center;
+}
+
+.details-section {
+  grid-column: 1 / -1;
+  border-top: 1px solid #eee;
+}
+
+/**************************/
+/* BELOW 1200px (Landscape Tablets) */
+/**************************/
+@media (max-width: 75em) {
+  .grid-container {
+    grid-template-columns: 0.1fr 1fr 1fr 1fr;
+  }
+
+  .grid-container>div {
+    padding: 1.5rem;
+  }
+
+  .tags-section,
+  .rating-section {
+    border: none
+  }
+
+  .price-section,
+  .btn-section {
+    text-align: end;
+    align-self: center;
+  }
+}
+
+/**************************/
+/* BELOW 544px (Phones) */
+/**************************/
+@media (max-width: 34em) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 0.1fr 2fr;
+  }
+
+  .index-section {
+    grid-row: 1;
+    text-align: center;
+  }
+
+  .title-section {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .tags-section {
+    grid-column: 1;
+    grid-row: 3;
+    border-top: 1px solid #eee
+  }
+
+  .tags-section-hide {
+    visibility: hidden;
+    display: none;
+  }
+
+  .rating-section {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
+    text-align: center;
+  }
+
+  .price-section {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: center;
+    text-align: center;
+  }
+
+  .btn-section {
+    grid-column: 2;
+    grid-row: 2;
+    text-align: center;
+    align-self: end;
+  }
+
+  .btn-showDetails {
+    --bs-btn-padding-y: 0.25rem;
+    --bs-btn-padding-x: 0.5rem;
+    --bs-btn-font-size: 0.875rem;
+    --bs-btn-border-radius: 0.25rem;
+  }
+
+  .details-section {
+    grid-column: 2;
+    grid-row: 3;
+  }
 }

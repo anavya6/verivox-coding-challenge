@@ -5,18 +5,22 @@
       {{item?.index}}
     </div>
 
-    <!-- Image -->
+    <!-- Title -->
     <div class="title-section">
       <img src="../../assets/images/{{item?.image}}" alt="{{item?.image}}" width="50" height="50">
       <div class="fs-5 fw-bold">{{item?.title}}</div>
     </div>
 
     <!-- Tags -->
-    <div class="tags-section">
+    <div class="tags-section" [ngClass]="{'tags-section-hide': !showDetails }">
       <div *ngFor="let tag of item?.tags">
         {{tag}}
       </div>
-      <div class="mt-3">
+    </div>
+
+    <!-- Rating -->
+    <div class="rating-section">
+      <div>
         <span *ngFor="let star of [].constructor(item?.rating)">
           <i class="bi bi-star-fill star my-5"></i>
         </span>
@@ -26,8 +30,11 @@
     <!-- Price -->
     <div class="price-section text-lg-center text-md-end">
       <div class="fs-6 fw-semibold">{{item?.price | currency:"EUR"}}</div>
-      <br>
-      <button class="btn btn-primary" (click)="toggleDetails()">{{detailsBtnLabel}}</button>
+    </div>
+
+    <!-- Show/Less Details btn -->
+    <div class="btn-section">
+      <button class="btn btn-primary btn-showDetails" (click)="toggleDetails()">{{detailsBtnLabel}}</button>
     </div>
 
     <!-- Details -->
