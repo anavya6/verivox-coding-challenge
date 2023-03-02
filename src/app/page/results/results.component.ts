@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { filter } from 'rxjs/internal/operators/filter';
 import { ItemState } from 'src/app/store/reducer';
 import { itemSelector, itemsLoadError } from 'src/app/store/selector';
 

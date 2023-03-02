@@ -12,7 +12,8 @@ export class ResultComponent {
   showDetails = false;
 
   toggleDetails() {
-    this.detailsBtnLabel = `${this.detailsBtnLabel.includes("Show") ? "Less" : "Show"} details`;
+    this.detailsBtnLabel = `${this.detailsBtnLabel
+      .includes("Show") ? "Less" : "Show"} details`;
     this.showDetails = !this.showDetails;
   }
 }

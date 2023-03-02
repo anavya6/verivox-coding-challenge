@@ -1,19 +1,19 @@
-<div class="my-3 border rounded">
+<div *ngIf="item" class="my-3 border rounded item">
   <div class="grid-container shadow-sm">
     <!-- Index -->
     <div class="index-section">
-      {{item?.index}}
+      {{item.index}}
     </div>
 
     <!-- Title -->
     <div class="title-section">
-      <img src="../../assets/images/{{item?.image}}" alt="{{item?.image}}" width="50" height="50">
-      <div class="fs-5 fw-bold">{{item?.title}}</div>
+      <img id="img" src="../../assets/images/{{item.image}}" alt="{{item.image}}" width="50" height="50">
+      <div class="fs-5 fw-bold" id="title">{{item.title}}</div>
     </div>
 
     <!-- Tags -->
     <div class="tags-section" [ngClass]="{'tags-section-hide': !showDetails }">
-      <div *ngFor="let tag of item?.tags">
+      <div class="tag" *ngFor="let tag of item.tags">
         {{tag}}
       </div>
     </div>
@@ -29,7 +29,7 @@
 
     <!-- Price -->
     <div class="price-section text-lg-center text-md-end">
-      <div class="fs-6 fw-semibold">{{item?.price | currency:"EUR"}}</div>
+      <div class="fs-6 fw-semibold price">{{item.price | currency:"EUR"}}</div>
     </div>
 
     <!-- Show/Less Details btn -->
@@ -39,7 +39,7 @@
 
     <!-- Details -->
     <div class="details-section" *ngIf="showDetails">
-      {{item?.description}}
+      {{item.description}}
     </div>
   </div>
 </div>

@@ -4,7 +4,7 @@
     <div class="col-lg-12 col-md-4">
       <div class="input-group mb-3">
         <span class="input-group-text" (click)="sortToggle()">
-          <i class="bi" [ngClass]="sort === 'asc'? 'bi-sort-down-alt': 'bi-sort-down'"></i>
+          <i class="bi" id="sort-icon" [ngClass]="sort === 'asc'? 'bi-sort-down-alt': 'bi-sort-down'"></i>
         </span>
         <select class="form-select" aria-label="Default sort" [(ngModel)]="sortBy" (change)="sortChange()">
           <option value="{{ field.toLowerCase() }}" *ngFor="let field of fields">
@@ -26,8 +26,8 @@
             <a class="dropdown-item" href="#">{{field}} </a>
           </li>
         </ul>
-        <input type="text" class="form-control" (keyup)="onKey($event)" aria-label="Filter based on selected field"
-          placeholder="Search based on {{filterBy}}">
+        <input type="text" class="form-control" id="filter-input" (keyup)="onKey($event)"
+          aria-label="Filter based on selected field" placeholder="Search based on {{filterBy}}">
       </div>
     </div>
   </div>

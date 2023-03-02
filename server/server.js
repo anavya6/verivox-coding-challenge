@@ -7,8 +7,8 @@ const server = jsonServer.create();
 server.use(middleware);
 server.use(jsonServer.bodyParser);
 
-server.get("/api/items", (req, res, next) => {
-  res.status(200).send(itemsData);
+server.get("/api", (req, res) => {
+  res.status(200).send("Server started");
 });
 
 server.post("/api/items", (req, res, next) => {
