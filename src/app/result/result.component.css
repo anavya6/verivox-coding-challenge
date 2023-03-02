@@ -1,7 +1,6 @@
 .grid-container {
   display: grid;
   grid-template-columns: 0.1fr 1fr 2fr 1fr;
-  /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
 }
 
 .grid-container>div {
@@ -11,6 +10,10 @@
 .index-section {
   grid-row: 1/ span 2;
   align-self: center;
+}
+
+img {
+  max-width: 49px;
 }
 
 .title-section {

@@ -1,14 +1,17 @@
 <div class="container-fluid">
   <div class="row">
+    <!-- search component with filter and sort -->
     <div class="col-lg-3 col-md-12">
       <app-search-result></app-search-result>
     </div>
     <div class="col-lg-9 col-md-12">
+      <!-- Error -->
       <div *ngIf="error$ | async as errorMessage">
         <h5 class="text-danger text-center my-3">
           {{ errorMessage }}
         </h5>
       </div>
+      <!-- Items -->
       <div else-ngIf *ngFor="let item of items$ | async">
         <app-result [item]="item"></app-result>
       </div>
