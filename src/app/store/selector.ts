@@ -1,9 +1,16 @@
-import { createSelector } from '@ngrx/store';
-import { Item } from '../model/item'
+import { createSelector, createFeatureSelector } from '@ngrx/store';
 import { ItemState } from './reducer';
 
+export const selectItems = createFeatureSelector<ItemState>('items');
+export const selectError = createFeatureSelector<ItemState>('error');
+
 export const itemSelector = createSelector(
-  (state: ItemState) => state.items,
-  (items: ReadonlyArray<Item>) => items
+  selectItems,
+  state => state.items
+);
+
+export const itemsLoadError = createSelector(
+  selectItems,
+  state => state.error
 );
 

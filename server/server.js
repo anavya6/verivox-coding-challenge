@@ -42,7 +42,7 @@ server.post("/api/items", (req, res, next) => {
         return itemValue.includes(value);
       }
 
-      return itemValue === value;
+      return itemValue === +value;
     });
   }
 

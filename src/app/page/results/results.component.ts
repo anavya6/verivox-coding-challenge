@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
+import { filter } from 'rxjs/internal/operators/filter';
 import { ItemState } from 'src/app/store/reducer';
-import { itemSelector } from 'src/app/store/selector';
+import { itemSelector, itemsLoadError } from 'src/app/store/selector';
 
 @Component({
   selector: 'app-results',
@@ -10,6 +11,7 @@ import { itemSelector } from 'src/app/store/selector';
 })
 export class ResultsComponent {
   items$ = this.store.pipe(select(itemSelector));
+  error$ = this.store.pipe(select(itemsLoadError));
 
   constructor(private store: Store<ItemState>) { }
 }

@@ -8,6 +8,12 @@ export const getItems = createAction('[Item] Get item',
 
 export const getItemsSuccess = createAction(
   '[Item] Get item success',
-  (items: ReadonlyArray<Item>) => ({ items })
+  (items: Item[]) => ({ items })
 );
+
+export const getItemsFailure = createAction(
+  '[Item] Get item failure',
+  (error: string) => ({ error })
+);
+
 
