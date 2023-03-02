@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { Item } from '../model/item';
 
+/* TODO to improve performance lazy load items either using pagination else load
+items based on scroll event */
 @Component({
   selector: 'app-result',
   templateUrl: './result.component.html',
