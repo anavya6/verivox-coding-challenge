@@ -6,7 +6,7 @@ import { Item } from '../model/item';
 export interface ItemState {
   items: Item[];
   error: string; // track errors
-};
+}
 
 export const initialItemState: ItemState = {
   items: [],
@@ -28,4 +28,4 @@ export const itemReducer = createReducer(
       error: error
     }
   }),
-);
+)

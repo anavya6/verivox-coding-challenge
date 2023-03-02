@@ -36,8 +36,8 @@ export class SearchResultComponent implements OnInit {
     this.dispatchAction();
   }
 
-  onKey(event: any) {
-    this.value = event.target.value;
+  onKey(event: Event) {
+    this.value = (event.target as HTMLInputElement).value;
     this.dispatchAction();
   }
 

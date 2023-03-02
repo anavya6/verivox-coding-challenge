@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { ItemState } from 'src/app/store/reducer';
 import { itemSelector, itemsLoadError } from 'src/app/store/selector';

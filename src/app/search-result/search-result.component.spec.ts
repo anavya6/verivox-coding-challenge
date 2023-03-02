@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
 import { provideMockStore } from '@ngrx/store/testing';
 
 import { SearchResultComponent } from './search-result.component';
@@ -26,14 +25,14 @@ describe('SearchResultComponent', () => {
   });
 
   it(`should contain sort field with atleast 1 option`, (() => {
-    let selectElement: HTMLSelectElement = fixture.nativeElement.querySelector('.form-select');
+    const selectElement: HTMLSelectElement = fixture.nativeElement.querySelector('.form-select');
     expect(selectElement).toBeDefined();
     expect(selectElement.options.length).toBeGreaterThanOrEqual(1);
   }));
 
   it(`should have sort icon for ascending/descending order`, (() => {
     // test for ascending icon
-    let el: HTMLElement = fixture.nativeElement.querySelector('#sort-icon');
+    const el: HTMLElement = fixture.nativeElement.querySelector('#sort-icon');
     expect(el.classList).toContain('bi-sort-down-alt');
 
     // click the element
@@ -46,12 +45,12 @@ describe('SearchResultComponent', () => {
 
   it(`should have input element with list of possible filter fields`, (() => {
     // Test list of filter fields
-    let filterEl: HTMLUListElement = fixture.nativeElement.querySelector('ul');
+    const filterEl: HTMLUListElement = fixture.nativeElement.querySelector('ul');
     expect(filterEl).toBeDefined();
     expect(filterEl.childNodes.length).toBeGreaterThanOrEqual(1);
 
     // Test for input field
-    let el: HTMLInputElement = fixture.nativeElement.querySelector('#filter-input');
+    const el: HTMLInputElement = fixture.nativeElement.querySelector('#filter-input');
     expect(el.placeholder).toContain('Search based on ');
   }));
 });

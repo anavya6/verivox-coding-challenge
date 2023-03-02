@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { createEffect, Actions, ofType } from '@ngrx/effects';
-import { EmptyError } from 'rxjs';
-import { catchError, exhaustMap, map, tap } from 'rxjs/operators';
+import { catchError, exhaustMap, map } from 'rxjs/operators';
 import { ItemsService } from '../service/items-service.service';
 import { getItems, getItemsSuccess, getItemsFailure } from './action';
 

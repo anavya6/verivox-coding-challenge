@@ -1,4 +1,4 @@
-import { ItemState } from 'src/app/store/reducer';
+import { ItemState } from '../../store/reducer';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideMockStore, MockStore } from '@ngrx/store/testing';
 import { ResultsComponent } from './results.component';
@@ -6,16 +6,16 @@ import { ResultComponent } from '../../result/result.component';
 import { SearchResultComponent } from '../../search-result/search-result.component';
 import { FormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
-import { itemSelector, itemsLoadError } from 'src/app/store/selector';
+import { itemSelector, itemsLoadError } from '../../store/selector';
 import { MemoizedSelector, DefaultProjectorFn } from '@ngrx/store';
-import { Item } from 'src/app/model/item';
+import { Item } from '../../model/item';
 
 describe('ResultsComponent', async () => {
   let component: ResultsComponent;
   let fixture: ComponentFixture<ResultsComponent>;
   let store: MockStore<ItemState>;
-  let mockItemsSelector: MemoizedSelector<any, Item[], DefaultProjectorFn<Item[]>>;
-  let mockErrorSelector: MemoizedSelector<any, string, DefaultProjectorFn<string>>;
+  let mockItemsSelector: MemoizedSelector<ItemState, Item[], DefaultProjectorFn<Item[]>>;
+  let mockErrorSelector: MemoizedSelector<ItemState, string, DefaultProjectorFn<string>>;
 
   beforeEach(async () => {
 

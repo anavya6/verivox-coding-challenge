@@ -46,46 +46,46 @@ describe('ResultComponent', () => {
     });
 
     it('should have index', () => {
-      let el: HTMLElement = fixture.nativeElement.querySelector('.index-section');
+      const el: HTMLElement = fixture.nativeElement.querySelector('.index-section');
       expect(el.textContent).toContain("1");
     });
 
     it('should have image', () => {
-      let el: HTMLImageElement = fixture.nativeElement.querySelector('#img');
+      const el: HTMLImageElement = fixture.nativeElement.querySelector('#img');
       expect(el.src).toContain("brass-2.png");
     });
 
     it('should have title', () => {
-      let el: HTMLElement = fixture.nativeElement.querySelector('#title');
+      const el: HTMLElement = fixture.nativeElement.querySelector('#title');
       expect(el.textContent).toContain("brass");
     });
 
     it('should have tags', () => {
-      let el: NodeList = fixture.nativeElement.querySelectorAll('.tag');
+      const el: NodeList = fixture.nativeElement.querySelectorAll('.tag');
       expect(el.length).toEqual(2)
     });
 
     it('should have rating', () => {
-      let el: NodeList = fixture.nativeElement.querySelectorAll('.star');
+      const el: NodeList = fixture.nativeElement.querySelectorAll('.star');
       expect(el.length).toEqual(2)
     });
 
     it('should have price', () => {
-      let el: HTMLElement = fixture.nativeElement.querySelector('.price');
+      const el: HTMLElement = fixture.nativeElement.querySelector('.price');
       expect(el.textContent).toContain(608)
     });
 
     it('should show description', () => {
       component.showDetails = true;
       fixture.detectChanges();
-      let el: HTMLElement = fixture.nativeElement.querySelector('.details-section');
+      const el: HTMLElement = fixture.nativeElement.querySelector('.details-section');
       expect(el.textContent).toContain("Nullam porttitor lacus at turpis");
     });
 
     it('should hide description', () => {
       component.showDetails = false;
       fixture.detectChanges();
-      let el: HTMLElement = fixture.nativeElement.querySelector('.details-section');
+      const el: HTMLElement = fixture.nativeElement.querySelector('.details-section');
       expect(el).toBeNull()
     });
   })
